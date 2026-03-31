@@ -416,7 +416,7 @@ function Services() {
         "Team training and handoff",
         "30-day post-launch support",
       ],
-      cta: "Book a Free Strategy Session",
+      cta: "Book a Free AI Strategy Session",
       roi: "Avg. $50K+ annual savings",
     },
     {
@@ -617,8 +617,9 @@ function CaseStudy() {
             <div className="col-span-2 bg-orange-500 rounded-2xl p-5 text-white">
               <p className="font-bold text-lg mb-1" style={{ fontFamily: "var(--font-heading)" }}>The Outcome</p>
               <p className="text-orange-100 text-sm leading-relaxed">
-                3 data-entry clerks redeployed to customer-facing roles. Zero manual BOL entry.
-                Carrier claim disputes dropped 91%. CFO signed off on Phase 2 expansion within 6 months.
+                94% reduction in manual dispatch errors. Zero manual BOL entry.
+                Billing lag revenue leakage eliminated (3–7% of gross revenue recovered).
+                Fractional AI CTO retainer activated — Phase 2 roadmap already underway.
               </p>
             </div>
           </div>
