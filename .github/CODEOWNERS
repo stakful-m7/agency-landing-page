@@ -1,0 +1,9 @@
+# Default: Terrance reviews everything
+* @jterrance
+
+# Agent-specific paths (expand as agent GitHub accounts are created)
+# /src/backend/ @stakful-m7/dev-team
+# /src/frontend/ @stakful-m7/dev-team
+# /docs/ @stakful-m7/writers
+# /.github/ @jterrance
+# /infrastructure/ @jterrance
