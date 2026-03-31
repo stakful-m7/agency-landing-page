@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* =========================================================
+   Stakful M7 Ventures — Design System v1.0
+   Source: STA-34 (CMO via UI/UX Pro Max)
+   Stack: Next.js 16 + Tailwind CSS v4
+   ========================================================= */
+
+@theme inline {
+  /* --- Color Tokens --- */
+  --color-primary:             #0F172A;
+  --color-primary-hover:       #1E293B;
+  --color-primary-foreground:  #FFFFFF;
+  --color-accent:              #0369A1;
+  --color-accent-hover:        #0284C7;
+  --color-cta:                 #F97316;
+  --color-cta-dark:            #C2410C;
+  --color-cta-hover:           #EA580C;
+  --color-background:          #F8FAFC;
+  --color-foreground:          #020617;
+  --color-card:                #FFFFFF;
+  --color-card-foreground:     #0F172A;
+  --color-muted:               #E8ECF1;
+  --color-muted-foreground:    #64748B;
+  --color-border:              #E2E8F0;
+  --color-success:             #16A34A;
+  --color-destructive:         #DC2626;
+
+  /* --- Typography --- */
+  --font-heading: var(--font-lexend), sans-serif;
+  --font-body:    var(--font-source-sans-3), system-ui, sans-serif;
+}
+
+:root {
+  --background: #F8FAFC;
+  --foreground: #020617;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading, sans-serif);
+}
+
+/* Interactive elements */
+a, button { cursor: pointer; }
+
+/* Skip navigation link */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #0F172A;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+}
+.skip-nav:focus { top: 0; }
+
+/* Stat reveal animation */
+@media (prefers-reduced-motion: no-preference) {
+  .stat-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+  .stat-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
