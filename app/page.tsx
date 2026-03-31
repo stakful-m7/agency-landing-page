@@ -686,15 +686,13 @@ function About() {
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Photo placeholder — real photo to be added */}
           <div className="flex justify-center lg:justify-start">
-            <div
-              className="w-64 h-64 rounded-2xl bg-slate-700 border border-slate-600 flex flex-col items-center justify-center gap-3 shadow-2xl ring-1 ring-black/5"
-              aria-label="Founder photo — Terrance"
-            >
-              <Users className="w-16 h-16 text-slate-500" aria-hidden="true" />
-              <span className="text-slate-500 text-sm">Terrance</span>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/facepic_02.jpg"
+              alt="Terrance Jones — Founder &amp; Fractional AI CTO"
+              className="w-64 h-80 rounded-2xl object-cover object-top shadow-2xl ring-1 ring-black/5"
+            />
           </div>
 
           {/* Bio */}
@@ -732,7 +730,7 @@ function About() {
                 Book a Free AI Strategy Session
               </a>
               <a
-                href="https://linkedin.com/in/PLACEHOLDER-BOARD-INPUT-REQUIRED"
+                href="https://www.linkedin.com/in/terrance-jones-677268123/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Connect with Terrance on LinkedIn"
@@ -906,7 +904,7 @@ function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Link className="w-4 h-4 text-blue-400 shrink-0" aria-hidden="true" />
-                <a href="https://linkedin.com/in/PLACEHOLDER-BOARD-INPUT-REQUIRED" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-sky-400 rounded-sm outline-none">
+                <a href="https://www.linkedin.com/in/terrance-jones-677268123/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-sky-400 rounded-sm outline-none">
                   LinkedIn
                 </a>
               </li>
