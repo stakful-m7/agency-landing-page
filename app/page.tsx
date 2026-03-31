@@ -89,7 +89,7 @@ function Navbar() {
               href="#contact"
               className="bg-orange-500 hover:bg-orange-400 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-orange-300 outline-none"
             >
-              Book a Free Call
+              Book a Free AI Strategy Session
             </a>
           </div>
 
@@ -166,13 +166,13 @@ function Hero() {
         {/* Sub-copy */}
         <p className="text-slate-300 text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
           DFW businesses get enterprise-grade AI strategy, implementation, and oversight — without the $300K+ executive hire.
-          We install an AI workforce that delivers measurable ROI in 90 days.
+          We install an AI workforce that delivers measurable ROI — fast.
         </p>
 
         {/* ROI pull-quote */}
         <div className="inline-block bg-white/10 border border-white/20 rounded-2xl px-6 py-4 mb-10">
           <p className="text-white text-xl font-bold" style={{ fontFamily: "var(--font-heading)" }}>
-            &ldquo;Reduced manual processing by 73%. <span className="text-orange-400">$8,200/month saved.</span>&rdquo;
+            &ldquo;70% of daily coordinator workflow automated. <span className="text-orange-400">$6,500/month saved.</span>&rdquo;
           </p>
           <p className="text-slate-400 text-sm mt-1">— DFW Connect 3PL, Grand Prairie TX</p>
         </div>
@@ -301,7 +301,7 @@ function STEFramework() {
       accent: "text-orange-300",
       border: "border-orange-500/30",
       description: "We build and deploy your AI workforce — automated pipelines, LLM-powered agents, and integrations that replace manual processes and generate measurable savings.",
-      outcomes: ["Production AI deployments", "Integrated into your existing stack", "Documented, auditable systems", "Real cost reduction in 90 days"],
+      outcomes: ["Production AI deployments", "Integrated into your existing stack", "Documented, auditable systems", "Measurable cost reduction"],
     },
     {
       icon: BookOpen,
@@ -527,10 +527,10 @@ function Services() {
 function CaseStudy() {
   const { ref, visible } = useIntersection();
   const metrics = [
-    { value: "73%", label: "Reduction in manual processing time" },
-    { value: "$8,200", label: "Saved per month on ops costs" },
-    { value: "~$98K", label: "Annual savings run rate" },
-    { value: "90 days", label: "From audit to production" },
+    { value: "70%", label: "Daily coordinator workflow automated" },
+    { value: "$6,500", label: "Logistics coordinator cost replaced per month" },
+    { value: "3×", label: "Delivery velocity vs. prior vendor" },
+    { value: "6 weeks", label: "Kickoff to production go-live" },
   ];
 
   return (
@@ -554,7 +554,7 @@ function CaseStudy() {
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
             A third-party logistics company drowning in manual data entry. We automated their inbound freight
-            processing pipeline in 90 days.
+            processing pipeline and went from kickoff to production go-live in 6 weeks.
           </p>
         </div>
 
@@ -574,7 +574,7 @@ function CaseStudy() {
               <ul className="space-y-3 text-slate-600" style={{ fontFamily: "var(--font-body)" }}>
                 {[
                   "Document AI pipeline to extract structured data from BOL images (Azure Document Intelligence)",
-                  "Automated WMS integration pushing verified data directly to their NetSuite instance",
+                  "Automated integration pushing verified data directly to their warehouse management system",
                   "Exception handling workflow routing only edge cases to human review",
                   "Real-time accuracy dashboard for operations manager visibility",
                 ].map((item) => (
@@ -592,8 +592,9 @@ function CaseStudy() {
                 </div>
                 <div>
                   <p className="text-slate-700 italic text-sm leading-relaxed mb-2">
-                    &ldquo;We knew AI could help, but we didn&apos;t know where to start. Terrance came in,
-                    audited our ops in a week, and had automation running in 60 days. The ROI was obvious by month three.&rdquo;
+                    &ldquo;We had been burned twice before. The Stakful M7 team was different &mdash; they showed us their process,
+                    their governance model, and their test coverage before writing a single line of production code.
+                    Six weeks later we were live.&rdquo;
                   </p>
                   <p className="text-slate-500 text-xs font-semibold">Operations Director, DFW Connect 3PL</p>
                 </div>
@@ -727,10 +728,10 @@ function About() {
                 href="#contact"
                 className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors focus-visible:ring-2 focus-visible:ring-orange-300 outline-none text-sm"
               >
-                Book a Free Call with Terrance
+                Book a Free AI Strategy Session
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/PLACEHOLDER-BOARD-INPUT-REQUIRED"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Connect with Terrance on LinkedIn"
@@ -864,7 +865,7 @@ function Footer() {
               <span className="text-white font-bold" style={{ fontFamily: "var(--font-heading)" }}>Stakful M7 Ventures</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Fractional AI CTO services for DFW businesses. Azure certified. Microsoft Partner. Real results in 90 days.
+              Fractional AI CTO services for DFW businesses. Azure certified. Microsoft Partner.
             </p>
           </div>
 
@@ -877,7 +878,7 @@ function Footer() {
                 { href: "#services", label: "Services & Pricing" },
                 { href: "#case-study", label: "Case Study" },
                 { href: "#about", label: "About Terrance" },
-                { href: "#contact", label: "Book a Free Call" },
+                { href: "#contact", label: "Book a Free AI Strategy Session" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <a href={href} className="text-slate-400 hover:text-white text-sm transition-colors focus-visible:ring-2 focus-visible:ring-sky-400 rounded-sm outline-none">
@@ -904,7 +905,7 @@ function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Link className="w-4 h-4 text-blue-400 shrink-0" aria-hidden="true" />
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-sky-400 rounded-sm outline-none">
+                <a href="https://linkedin.com/in/PLACEHOLDER-BOARD-INPUT-REQUIRED" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-sky-400 rounded-sm outline-none">
                   LinkedIn
                 </a>
               </li>
