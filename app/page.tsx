@@ -837,8 +837,8 @@ function CTASection() {
 
         <p className="mt-6 text-slate-500 text-sm">
           Prefer email?{" "}
-          <a href="mailto:terrance@stakfulm7.com" className="text-blue-600 hover:text-blue-700 font-medium focus-visible:ring-2 focus-visible:ring-blue-300 rounded-sm outline-none">
-            terrance@stakfulm7.com
+          <a href="mailto:jterrance@stakful.com" className="text-blue-600 hover:text-blue-700 font-medium focus-visible:ring-2 focus-visible:ring-blue-300 rounded-sm outline-none">
+            jterrance@stakful.com
           </a>
         </p>
       </div>
@@ -898,8 +898,8 @@ function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-blue-400 shrink-0" aria-hidden="true" />
-                <a href="mailto:terrance@stakfulm7.com" className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-sky-400 rounded-sm outline-none">
-                  terrance@stakfulm7.com
+                <a href="mailto:jterrance@stakful.com" className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-sky-400 rounded-sm outline-none">
+                  jterrance@stakful.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
