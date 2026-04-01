@@ -1,6 +1,6 @@
 # agency-landing-page
 
-Stakful M7 Ventures agency landing page — Fractional AI CTO positioning.
+Stakful Systems agency landing page — Fractional AI CTO positioning.
 
 Next.js 15 + Tailwind CSS.
 

@@ -17,7 +17,7 @@ const sourceSans3 = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "Stakful M7 Ventures — Fractional AI CTO for DFW Businesses",
+  title: "Stakful Systems — Fractional AI CTO for DFW Businesses",
   description:
     "Your AI-Powered CTO for a Fraction of the Cost. Serving the DFW Metroplex. Azure certified, Microsoft Partner, 20+ years enterprise experience.",
   keywords: [
