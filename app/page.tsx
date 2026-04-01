@@ -708,7 +708,7 @@ function About() {
               Built by someone who&apos;s shipped enterprise AI — not just advised on it
             </h2>
             <p className="text-slate-300 leading-relaxed mb-4" style={{ fontFamily: "var(--font-body)" }}>
-              I&apos;m Terrance. I&apos;ve spent 20+ years in enterprise technology — from Fortune 500 software
+              I&apos;m Terrance. I&apos;ve spent 10+ years in enterprise technology — from Fortune 500 software
               delivery to building AI automation systems for mid-market businesses across the DFW metroplex.
             </p>
             <p className="text-slate-300 leading-relaxed mb-4" style={{ fontFamily: "var(--font-body)" }}>
