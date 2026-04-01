@@ -200,7 +200,7 @@ function Hero() {
             { icon: MapPin, text: "DFW-Based" },
             { icon: Award, text: "Azure Certified" },
             { icon: Shield, text: "Microsoft Partner" },
-            { icon: Clock, text: "20+ Years Enterprise" },
+            { icon: Clock, text: "10+ Years Enterprise" },
           ].map(({ icon: Icon, text }) => (
             <div key={text} className="flex items-center gap-1.5">
               <Icon className="w-4 h-4 text-blue-400" aria-hidden="true" />
@@ -634,7 +634,7 @@ function Credentials() {
   const creds = [
     { icon: Shield, title: "Microsoft Partner", sub: "Active partner network member" },
     { icon: Award, title: "Azure Certified", sub: "Azure Solutions Architect Expert" },
-    { icon: Clock, title: "20+ Years Enterprise", sub: "Fortune 500 to mid-market" },
+    { icon: Clock, title: "10+ Years Enterprise", sub: "Fortune 500 to mid-market" },
     { icon: MapPin, title: "DFW-Based", sub: "Serving the DFW Metroplex" },
   ];
   const stack = [
