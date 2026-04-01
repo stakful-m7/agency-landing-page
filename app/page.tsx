@@ -23,6 +23,17 @@ import {
   Link,
 } from "lucide-react";
 
+// ── Logo SVG ──────────────────────────────────────────────
+function StakfulLogo({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <rect x="4" y="6" width="20" height="4" rx="2" fill="currentColor" opacity="0.7" />
+      <path d="M4 14h8c2 0 3 1 4 2s2 2 4 2h8v-4H20c-2 0-3 1-4 2s-2 2-4 2H4v-4z" fill="currentColor" opacity="0.85" />
+      <rect x="4" y="22" width="24" height="4" rx="2" fill="currentColor" />
+    </svg>
+  );
+}
+
 // ── Utility ────────────────────────────────────────────────
 function useIntersection(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -62,7 +73,7 @@ function Navbar() {
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-sky-400 rounded-sm outline-none">
             <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center" aria-hidden="true">
-              <Zap className="w-4 h-4 text-white" />
+              <StakfulLogo className="w-5 h-5 text-white" />
             </div>
             <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>
               Stakful Systems
@@ -859,7 +870,7 @@ function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <div className="w-7 h-7 bg-orange-500 rounded-lg flex items-center justify-center" aria-hidden="true">
-                <Zap className="w-3.5 h-3.5 text-white" />
+                <StakfulLogo className="w-4 h-4 text-white" />
               </div>
               <span className="text-white font-bold" style={{ fontFamily: "var(--font-heading)" }}>Stakful Systems</span>
             </div>
