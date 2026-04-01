@@ -149,7 +149,7 @@ function Hero() {
         {/* Credential badge */}
         <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-1.5 mb-8">
           <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" aria-hidden="true" />
-          <span className="text-blue-300 text-sm font-medium">Fractional AI CTO — DFW Metroplex</span>
+          <span className="text-blue-300 text-sm font-medium">Fractional CTO — DFW Metroplex</span>
         </div>
 
         {/* Headline */}
@@ -420,7 +420,7 @@ function Services() {
       roi: "Avg. $50K+ annual savings",
     },
     {
-      title: "Fractional AI CTO Retainer",
+      title: "Fractional CTO Retainer",
       price: "$5K – $15K/mo",
       duration: "Ongoing engagement",
       tagline: "Executive-level AI leadership without the executive salary. Strategy, oversight, and accountability every month.",
@@ -619,7 +619,7 @@ function CaseStudy() {
               <p className="text-orange-100 text-sm leading-relaxed">
                 94% reduction in manual dispatch errors. Zero manual BOL entry.
                 Billing lag revenue leakage eliminated (3–7% of gross revenue recovered).
-                Fractional AI CTO retainer activated — Phase 2 roadmap already underway.
+                Fractional CTO retainer activated — Phase 2 roadmap already underway.
               </p>
             </div>
           </div>
@@ -690,7 +690,7 @@ function About() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/facepic_02.jpg"
-              alt="Terrance Jones — Founder &amp; Fractional AI CTO"
+              alt="Terrance Jones — Founder &amp; Fractional CTO"
               className="w-64 h-80 rounded-2xl object-cover object-top shadow-2xl ring-1 ring-black/5"
             />
           </div>
@@ -698,7 +698,7 @@ function About() {
           {/* Bio */}
           <div className="text-white">
             <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-1.5 mb-6">
-              <span className="text-blue-300 text-sm font-medium">Founder & Fractional AI CTO</span>
+              <span className="text-blue-300 text-sm font-medium">Founder & Fractional CTO</span>
             </div>
             <h2
               id="about-heading"
@@ -864,7 +864,7 @@ function Footer() {
               <span className="text-white font-bold" style={{ fontFamily: "var(--font-heading)" }}>Stakful Systems</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Fractional AI CTO services for DFW businesses. Azure certified. Microsoft Partner.
+              Fractional CTO services for DFW businesses. Azure certified. Microsoft Partner.
             </p>
           </div>
 
