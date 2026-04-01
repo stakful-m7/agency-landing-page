@@ -65,7 +65,7 @@ function Navbar() {
               <Zap className="w-4 h-4 text-white" />
             </div>
             <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>
-              Stakful M7
+              Stakful Systems
             </span>
           </a>
 
@@ -592,7 +592,7 @@ function CaseStudy() {
                 </div>
                 <div>
                   <p className="text-slate-700 italic text-sm leading-relaxed mb-2">
-                    &ldquo;We had been burned twice before. The Stakful M7 team was different &mdash; they showed us their process,
+                    &ldquo;We had been burned twice before. The Stakful Systems team was different &mdash; they showed us their process,
                     their governance model, and their test coverage before writing a single line of production code.
                     Six weeks later we were live.&rdquo;
                   </p>
@@ -712,14 +712,14 @@ function About() {
               delivery to building AI automation systems for mid-market businesses across the DFW metroplex.
             </p>
             <p className="text-slate-300 leading-relaxed mb-4" style={{ fontFamily: "var(--font-body)" }}>
-              I started Stakful M7 Ventures because I kept seeing the same pattern: DFW business owners knew
+              I started Stakful Systems because I kept seeing the same pattern: DFW business owners knew
               AI was the future but didn&apos;t have the in-house leadership to execute safely. So they either
               over-hired expensive talent, under-used cheap tools, or got sold a consulting report that
               collected dust.
             </p>
             <p className="text-slate-300 leading-relaxed mb-8" style={{ fontFamily: "var(--font-body)" }}>
               I&apos;m Azure certified, a Microsoft Partner, and I&apos;ve personally deployed AI systems that
-              are in production today. When you work with Stakful M7, you&apos;re working with me directly — not
+              are in production today. When you work with Stakful Systems, you&apos;re working with me directly — not
               a team of generalist consultants.
             </p>
             <div className="flex gap-4">
@@ -861,7 +861,7 @@ function Footer() {
               <div className="w-7 h-7 bg-orange-500 rounded-lg flex items-center justify-center" aria-hidden="true">
                 <Zap className="w-3.5 h-3.5 text-white" />
               </div>
-              <span className="text-white font-bold" style={{ fontFamily: "var(--font-heading)" }}>Stakful M7 Ventures</span>
+              <span className="text-white font-bold" style={{ fontFamily: "var(--font-heading)" }}>Stakful Systems</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               Fractional AI CTO services for DFW businesses. Azure certified. Microsoft Partner.
@@ -913,7 +913,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-xs">
-          <p>&copy; {new Date().getFullYear()} Stakful M7 Ventures. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Stakful Systems. All rights reserved.</p>
           <div className="flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5 text-blue-400" aria-hidden="true" />
             <span>DFW Metroplex, Texas</span>
