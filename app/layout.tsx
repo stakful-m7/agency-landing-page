@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Lexend, Source_Sans_3 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const lexend = Lexend({
@@ -39,7 +40,10 @@ export default function RootLayout({
       lang="en"
       className={`${lexend.variable} ${sourceSans3.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
