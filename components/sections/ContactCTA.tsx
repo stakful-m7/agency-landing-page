@@ -5,7 +5,11 @@ import { fontBody, fontHeading } from "@/components/brand/tokens";
 
 export function ContactCTA() {
   return (
-    <section id="contact" aria-labelledby="cta-heading" className="py-24 bg-white">
+    <section
+      id="contact"
+      aria-labelledby="cta-heading"
+      className="scroll-mt-16 py-24 bg-white"
+    >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-400/20 rounded-full px-4 py-1.5 mb-6">
           <span className="text-orange-600 text-sm font-semibold">Free — No obligation</span>
