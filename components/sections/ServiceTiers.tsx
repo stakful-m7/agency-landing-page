@@ -91,7 +91,7 @@ export function ServiceTiers() {
               key={title}
               className={`stat-reveal rounded-2xl p-6 flex flex-col ${visible ? "visible" : ""} ${
                 highlight
-                  ? "bg-slate-900 text-white ring-2 ring-orange-500 scale-105"
+                  ? "bg-slate-900 text-white ring-2 ring-orange-500 shadow-xl md:-translate-y-2"
                   : "bg-white border border-slate-200 text-slate-900"
               }`}
             >
