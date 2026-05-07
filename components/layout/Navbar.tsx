@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { StakfulLogo } from "@/components/brand/StakfulLogo";
 import { fontHeading } from "@/components/brand/tokens";
@@ -15,11 +15,38 @@ const NAV_ITEMS = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  // Mobile menu: Escape closes, outside-click closes, focus returns to toggle.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    const onPointerDown = (e: PointerEvent) => {
+      const target = e.target as Node | null;
+      if (!target) return;
+      if (menuRef.current?.contains(target)) return;
+      if (toggleRef.current?.contains(target)) return;
+      setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [open]);
   return (
     <nav
       role="navigation"
@@ -67,10 +94,12 @@ export function Navbar() {
 
           {/* Mobile menu toggle */}
           <button
+            ref={toggleRef}
             className="md:hidden text-slate-300 hover:text-white focus-visible:ring-2 focus-visible:ring-sky-400 rounded-sm outline-none p-1"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="mobile-nav"
           >
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -78,7 +107,11 @@ export function Navbar() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden border-t border-slate-800 py-4 flex flex-col gap-4">
+          <div
+            id="mobile-nav"
+            ref={menuRef}
+            className="md:hidden border-t border-slate-800 py-4 flex flex-col gap-4"
+          >
             {NAV_ITEMS.map(({ href, label }) => (
               <a
                 key={href}
