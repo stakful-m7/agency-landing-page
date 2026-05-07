@@ -15,8 +15,7 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 min-h-screen flex flex-col justify-center relative"
     >
-      {/* Skip nav target */}
-      <main id="main-content" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         {/* Credential badge */}
         <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-1.5 mb-8">
           <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" aria-hidden="true" />
@@ -78,7 +77,7 @@ export function Hero() {
             </div>
           ))}
         </div>
-      </main>
+      </div>
 
       {/* Scroll indicator */}
       <div

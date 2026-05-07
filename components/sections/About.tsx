@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Link } from "lucide-react";
 import { fontBody, fontHeading } from "@/components/brand/tokens";
 
@@ -11,12 +12,15 @@ export function About() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center lg:justify-start">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/facepic_02.jpg"
-              alt="Terrance Jones — Founder &amp; Fractional CTO"
-              className="w-64 h-80 rounded-2xl object-cover object-top shadow-2xl ring-1 ring-black/5"
-            />
+            <div className="relative w-64 h-80 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+              <Image
+                src="/images/facepic_02.jpg"
+                alt="Terrance Jones — Founder & Fractional CTO"
+                fill
+                sizes="256px"
+                className="object-cover object-top"
+              />
+            </div>
           </div>
 
           {/* Bio */}
