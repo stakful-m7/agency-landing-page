@@ -1,6 +1,7 @@
 "use server";
 
 import { headers } from "next/headers";
+import { Resend } from "resend";
 
 export type LeadFieldErrors = Partial<
   Record<"name" | "email" | "company" | "industry" | "challenge" | "captcha", string>
@@ -13,6 +14,18 @@ export type LeadState = {
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const TRANSPORT_FAILURE_MESSAGE =
+  "We couldn't submit your request right now. Please email jterrance@stakful.com directly.";
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 async function verifyTurnstile(token: string): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
@@ -45,6 +58,75 @@ async function verifyTurnstile(token: string): Promise<boolean> {
     return data.success === true;
   } catch {
     return false;
+  }
+}
+
+type LeadFields = {
+  name: string;
+  email: string;
+  company: string;
+  industry: string;
+  challenge: string;
+};
+
+async function deliverLead(fields: LeadFields): Promise<{ ok: boolean }> {
+  const apiKey = process.env.RESEND_API_KEY;
+  const fromEmail = process.env.RESEND_FROM_EMAIL ?? "leads@stakful.com";
+  const toEmail = process.env.RESEND_TO_EMAIL ?? "jterrance@stakful.com";
+
+  if (!apiKey) {
+    // Provider not configured — refuse to fake a success. The user will see
+    // the transport-failure message and a fallback mailto.
+    console.error(
+      "[lead] RESEND_API_KEY not set — submission was validated but not delivered",
+      { email: fields.email, company: fields.company }
+    );
+    return { ok: false };
+  }
+
+  const resend = new Resend(apiKey);
+
+  const subject = `New strategy session request — ${fields.name} (${fields.company})`;
+  const textBody = [
+    `Name:      ${fields.name}`,
+    `Email:     ${fields.email}`,
+    `Company:   ${fields.company}`,
+    `Industry:  ${fields.industry || "(not provided)"}`,
+    "",
+    "Biggest operational challenge:",
+    fields.challenge || "(not provided)",
+  ].join("\n");
+
+  const htmlBody = `
+    <table cellpadding="0" cellspacing="0" border="0" style="font-family: system-ui, -apple-system, sans-serif; color: #0F172A; line-height: 1.5;">
+      <tr><td style="padding: 4px 12px 4px 0;"><strong>Name</strong></td><td>${escapeHtml(fields.name)}</td></tr>
+      <tr><td style="padding: 4px 12px 4px 0;"><strong>Email</strong></td><td><a href="mailto:${escapeHtml(fields.email)}">${escapeHtml(fields.email)}</a></td></tr>
+      <tr><td style="padding: 4px 12px 4px 0;"><strong>Company</strong></td><td>${escapeHtml(fields.company)}</td></tr>
+      <tr><td style="padding: 4px 12px 4px 0;"><strong>Industry</strong></td><td>${escapeHtml(fields.industry || "(not provided)")}</td></tr>
+    </table>
+    <p style="font-family: system-ui, -apple-system, sans-serif; color: #0F172A; margin-top: 24px;"><strong>Biggest operational challenge:</strong></p>
+    <p style="font-family: system-ui, -apple-system, sans-serif; color: #334155; white-space: pre-wrap;">${escapeHtml(fields.challenge || "(not provided)")}</p>
+  `;
+
+  try {
+    const { error } = await resend.emails.send({
+      from: `Stakful Lead <${fromEmail}>`,
+      to: toEmail,
+      replyTo: fields.email,
+      subject,
+      text: textBody,
+      html: htmlBody,
+    });
+
+    if (error) {
+      console.error("[lead] resend returned error", error);
+      return { ok: false };
+    }
+
+    return { ok: true };
+  } catch (e) {
+    console.error("[lead] resend transport failure", e);
+    return { ok: false };
   }
 }
 
@@ -81,25 +163,10 @@ export async function submitLead(
     };
   }
 
-  // TODO: wire an email/CRM provider here. The provider choice is a product
-  // decision (cost, deliverability, CRM hookup) — leaving the integration
-  // explicit so submissions surface in dev/preview logs and don't silently
-  // disappear. Pick one of:
-  //   - Resend:    https://resend.com/docs/send-with-nextjs
-  //   - Postmark:  https://postmarkapp.com/developer/api/email-api
-  //   - HubSpot:   https://developers.hubspot.com/docs/api/crm/contacts
-  //
-  // Required env vars (whichever provider): set in Vercel project settings.
-  // On wireup, replace this console.info with the actual send + a try/catch
-  // that returns { ok: false } on transport failure so users see a real
-  // error instead of a false success.
-  console.info("[lead-stub] submission received", {
-    name,
-    email,
-    company,
-    industry: industry || null,
-    challenge: challenge || null,
-  });
+  const delivered = await deliverLead({ name, email, company, industry, challenge });
+  if (!delivered.ok) {
+    return { ok: false, message: TRANSPORT_FAILURE_MESSAGE };
+  }
 
   return {
     ok: true,
