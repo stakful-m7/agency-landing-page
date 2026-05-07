@@ -82,7 +82,7 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 motion-safe:animate-bounce"
         aria-hidden="true"
       >
         <ChevronDown className="w-6 h-6 text-slate-500" />

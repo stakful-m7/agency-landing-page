@@ -58,7 +58,12 @@ const PHASES = [
 export function STEFramework() {
   const { ref, visible } = useIntersection();
   return (
-    <section id="ste" ref={ref} aria-labelledby="ste-heading" className="py-24 bg-slate-50">
+    <section
+      id="ste"
+      ref={ref}
+      aria-labelledby="ste-heading"
+      className="scroll-mt-16 py-24 bg-slate-50"
+    >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

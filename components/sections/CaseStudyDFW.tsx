@@ -25,7 +25,7 @@ export function CaseStudyDFW() {
       id="case-study"
       ref={ref}
       aria-labelledby="case-study-heading"
-      className="py-24 bg-slate-50"
+      className="scroll-mt-16 py-24 bg-slate-50"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

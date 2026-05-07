@@ -6,7 +6,7 @@ export function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950"
+      className="scroll-mt-16 py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
